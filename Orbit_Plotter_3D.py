@@ -6,7 +6,6 @@
 
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-import matplotlib.patches as mpatches
 import numpy as np
 
 class Orbit_Plotter_3D:
@@ -31,7 +30,7 @@ class Orbit_Plotter_3D:
         x = self.ax.plot3D([0, 1], [0, 0], [0, 0], 'red')
         y = self.ax.plot3D([0, 0], [0, 1], [0, 0], 'green')
         z = self.ax.plot3D([0, 0], [0, 0], [0, 1], 'blue')
-        self.bounds = 16
+        self.bounds = 5
         self.ax.axes.set_xlim3d(left=-self.bounds, right=self.bounds)
         self.ax.axes.set_ylim3d(bottom=-self.bounds, top=self.bounds)
         self.ax.axes.set_zlim3d(bottom=-self.bounds, top=self.bounds)

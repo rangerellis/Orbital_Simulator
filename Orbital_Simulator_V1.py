@@ -48,17 +48,17 @@ for k in range(1, 20, 1):
     mars_object.orbit_creation(time_start, time_end, time_step)
     Orbit_Plot.update_plot(mars_object.xecliptic, mars_object.yecliptic, mars_object.zecliptic, 4, mars_object.radius)
 
-    jupiter_object.orbit_creation(time_start, time_end, time_step)
-    Orbit_Plot.update_plot(jupiter_object.xecliptic, jupiter_object.yecliptic, jupiter_object.zecliptic, 5, jupiter_object.radius)
-
-    saturn_object.orbit_creation(time_start, time_end, time_step)
-    Orbit_Plot.update_plot(saturn_object.xecliptic, saturn_object.yecliptic, saturn_object.zecliptic, 6, saturn_object.radius)
-
-    uranus_object.orbit_creation(time_start, time_end, time_step)
-    Orbit_Plot.update_plot(uranus_object.xecliptic, uranus_object.yecliptic, uranus_object.zecliptic, 7, uranus_object.radius)
-
-    neptune_object.orbit_creation(time_start, time_end, time_step)
-    Orbit_Plot.update_plot(neptune_object.xecliptic, neptune_object.yecliptic, neptune_object.zecliptic, 8, neptune_object.radius)
+    # jupiter_object.orbit_creation(time_start, time_end, time_step)
+    # Orbit_Plot.update_plot(jupiter_object.xecliptic, jupiter_object.yecliptic, jupiter_object.zecliptic, 5, jupiter_object.radius)
+    #
+    # saturn_object.orbit_creation(time_start, time_end, time_step)
+    # Orbit_Plot.update_plot(saturn_object.xecliptic, saturn_object.yecliptic, saturn_object.zecliptic, 6, saturn_object.radius)
+    #
+    # uranus_object.orbit_creation(time_start, time_end, time_step)
+    # Orbit_Plot.update_plot(uranus_object.xecliptic, uranus_object.yecliptic, uranus_object.zecliptic, 7, uranus_object.radius)
+    #
+    # neptune_object.orbit_creation(time_start, time_end, time_step)
+    # Orbit_Plot.update_plot(neptune_object.xecliptic, neptune_object.yecliptic, neptune_object.zecliptic, 8, neptune_object.radius)
 
     plt.draw()
     plt.pause(0.001)
