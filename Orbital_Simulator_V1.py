@@ -7,8 +7,11 @@
 from celestial_object import celestial_object
 from celestial_object_library import celestial_object_library
 from Orbit_Plotter_3D import Orbit_Plotter_3D
+from Time_Return import Time_Return
 
 import matplotlib.pyplot as plt
+
+datetime = Time_Return()
 
 celestial_object_library = celestial_object_library()
 [a_mercury, e_mercury, i_mercury, OMEGA_mercury, PI_mercury, L0_mercury, EDaysYr_mercury, Radius_km_mercury] = celestial_object_library.values("Planets", "Mercury")
@@ -30,11 +33,17 @@ uranus_object = celestial_object(a_uranus, e_uranus, i_uranus, OMEGA_uranus, PI_
 neptune_object = celestial_object(a_neptune, e_neptune, i_neptune, OMEGA_neptune, PI_neptune, L0_neptune, EDaysYr_neptune, Radius_km_neptune)
 
 Orbit_Plot = Orbit_Plotter_3D()
+
+datetime.get()
+prev_time = datetime.year
+
 for k in range(1, 20, 1):
 
-    time_start = 0.01 * (k - 10.0)
-    time_end = 0.01*k
-    time_step = 20
+    datetime.get()
+
+    time_start = prev_time  # 0.01 * (k - 10.0)
+    time_end = datetime.adjusted_year  # 0.01*k
+    time_step = 5  # 20
 
     mercury_object.orbit_creation(time_start, time_end, time_step)
     Orbit_Plot.update_plot(mercury_object.xecliptic, mercury_object.yecliptic, mercury_object.zecliptic, 1, mercury_object.radius)
@@ -60,8 +69,10 @@ for k in range(1, 20, 1):
     # neptune_object.orbit_creation(time_start, time_end, time_step)
     # Orbit_Plot.update_plot(neptune_object.xecliptic, neptune_object.yecliptic, neptune_object.zecliptic, 8, neptune_object.radius)
 
+    prev_time = time_end
+
     plt.draw()
-    plt.pause(0.001)
+    plt.pause(0.1)
 
 #print("handle", Orbit_Plot.handle)
 plt.show()

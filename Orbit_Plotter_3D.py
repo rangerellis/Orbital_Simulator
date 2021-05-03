@@ -38,7 +38,7 @@ class Orbit_Plotter_3D:
         # Create a handle for each object
         self.handle = []
 
-        self.diameterSun = 10 * 0.00929826069  # in AU
+        self.diameterSun = 20 * 0.00929826069  # in AU
         self.u = np.linspace(0, 2 * np.pi, 50)
         self.v = np.linspace(0, np.pi, 50)
 
